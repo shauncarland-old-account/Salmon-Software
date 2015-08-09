@@ -1,0 +1,39 @@
+Name: cutSheets
+Input: A 3D array of data values, a start index, a finish index
+Output: A 3D array 
+Description:  cutSheets takes in a 3D array.  It slices the 3D array based off of the start and finish indexes.  For example, in the domain of sea surface temperature,this function would return an array of the Sea Surface Temperature grids from the start index year to the end index year.
+
+  
+Name: calcDistance
+Input: Two latitude points, two longitude points (Floats or Integers)
+Output: A float
+Description: This function calculates the distance between two lat/lon points.
+
+Name: calcMeans
+Input: 3D array (array of 2D arrays)
+Output: 2D array
+Description: This function takes in an array of 2D arrays (a 3D array).  It calculates the mean average for each slot in the 2D arrays over the array of arrays.  It returns a 2D Array with each element corresponding to the mean of the elements in that position of the 3D array
+
+Name: calcAnom
+Input: A 3D array and a 2D array
+Output: A 3D array
+Description: calcAnom takes in a 2D array containing average values for a base period.  It then iterates through all of the arrays in data, a 3D array.  For each array, calcAnom calculates the difference between each element in the array from the corresponding element in the base period array.  This information is then put into a 2D array.  All of these 2D arrays are packaged into a 3D array and returned. 
+
+Name: buildWindowStructure
+Input: Integer, Vector of Floats
+Output: List Object
+Description: buildWindowStructure does a series of tasks.  Given a vector of floats (referred to as line), the function finds which two adjacent values have the smallest and largest difference.  It also determines which N-tuple (window) of adjacent values has the smallest and largest difference, where N is the size of the window.  The function returns a list giving the value of the largest/second largest/smallest/second smallest gap, the index of where the largest gap is, a list of differences from the windows, which window had the largest/smallest/second largest/second smallest score (and where it is located).
+
+Name: countCirculiMarine
+Input: A list of marine circli from a salmon scale dataset
+Output: A numerical Vector
+Description: This function takes in a data set of marine circli.  For each fish (row in the data set) it counts the number of values until it reaches an NA value.  Then, it stores this count.  This procedure is repeated for N fish in the data set.
+  
+Name: calcTimeInWaterMarine
+Input: A list of Marine Circuli, a list of return dates
+Output: A numerical vector
+Description: This function calculates the number of days each fish in the data set was in the water.  It currently works for 1SW fish.  A slight modification, as described in the function documentation, will allow it to be used for 2SW fish.  
+
+Name: calcCirculiPerMonthMarine
+Input: A list of marine circuli, a list of return dates
+Output: A vector
